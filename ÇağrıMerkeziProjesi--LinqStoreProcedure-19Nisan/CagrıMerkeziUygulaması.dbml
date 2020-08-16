@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CagrıMerkezi" Class="CagrıMerkeziUygulamasıDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=CagrıMerkezi;User ID=sa" SettingsObjectName="ÇağrıMerkeziProjesi__LinqStoreProcedure_19Nisan.Properties.Settings" SettingsPropertyName="CagrıMerkeziConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CagrıMerkeziGörevlisi" Member="CagrıMerkeziGörevlisis">
+    <Type Name="CagrıMerkeziGörevlisi">
+      <Column Name="ÇNO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AdıSoyadı" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Mezuniyet" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VardiyaDurumu" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HaftalıkÇalışmaPlanı" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="CagrıMerkeziGörevlisi_KayıtTablosu" Member="KayıtTablosus" ThisKey="ÇNO" OtherKey="GörevliNo" Type="KayıtTablosu" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Kampanya" Member="Kampanyas">
+    <Type Name="Kampanya">
+      <Column Name="KNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TarifeNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KAdı" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="KSüresi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KUcreti" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="Tarife_Kampanya" Member="Tarife" ThisKey="TarifeNo" OtherKey="TarifeNo" Type="Tarife" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Musteriler" Member="Musterilers">
+    <Type Name="Musteriler">
+      <Column Name="MusteriNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AdSoyad" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Türü" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Telefon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Adres" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Puan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Musteriler_Ödeme" Member="Ödemes" ThisKey="MusteriNo" OtherKey="MusteriNo" Type="Ödeme" />
+      <Association Name="Musteriler_Tarife" Member="Tarifes" ThisKey="MusteriNo" OtherKey="MusteriNo" Type="Tarife" />
+      <Association Name="Musteriler_KayıtTablosu" Member="KayıtTablosus" ThisKey="MusteriNo" OtherKey="MusteriNo" Type="KayıtTablosu" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ödeme" Member="Ödemes">
+    <Type Name="Ödeme">
+      <Column Name="Ödemeno" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MusteriNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tipi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ÖdemeTarihi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ÖdemeTutarı" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ÖdemeGecikmeDurumu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ÖdemeGecikmeFaizi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Musteriler_Ödeme" Member="Musteriler" ThisKey="MusteriNo" OtherKey="MusteriNo" Type="Musteriler" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tarife" Member="Tarifes">
+    <Type Name="Tarife">
+      <Column Name="TarifeNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MusteriNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TarifeAdı" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TarifeDurum" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ucret" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="BaşlangıçTarihi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BitişTarihi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Tarife_Kampanya" Member="Kampanyas" ThisKey="TarifeNo" OtherKey="TarifeNo" Type="Kampanya" />
+      <Association Name="Musteriler_Tarife" Member="Musteriler" ThisKey="MusteriNo" OtherKey="MusteriNo" Type="Musteriler" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Birimler" Member="Birimlers">
+    <Type Name="Birimler">
+      <Column Name="BirimNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BirimAdı" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BirimMüdürü" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ŞubeNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Birimler_KayıtTablosu" Member="KayıtTablosus" ThisKey="BirimNo" OtherKey="BirimNo" Type="KayıtTablosu" />
+      <Association Name="Şubeler_Birimler" Member="Şubeler" ThisKey="ŞubeNo" OtherKey="ŞubeNo" Type="Şubeler" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Şubeler" Member="Şubelers">
+    <Type Name="Şubeler">
+      <Column Name="ŞubeNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ŞubeAdı" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Şubeİlçe" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ŞubeYetkilisi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Şubeler_Birimler" Member="Birimlers" ThisKey="ŞubeNo" OtherKey="ŞubeNo" Type="Birimler" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KayıtTablosu" Member="KayıtTablosus">
+    <Type Name="KayıtTablosu">
+      <Column Name="KayıtNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MusteriNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GörevliNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KayıtSüresi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KayıtTarihi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="KayıtSaati" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Açıklama" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BirimNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Birimler_KayıtTablosu" Member="Birimler" ThisKey="BirimNo" OtherKey="BirimNo" Type="Birimler" IsForeignKey="true" />
+      <Association Name="CagrıMerkeziGörevlisi_KayıtTablosu" Member="CagrıMerkeziGörevlisi" ThisKey="GörevliNo" OtherKey="ÇNO" Type="CagrıMerkeziGörevlisi" IsForeignKey="true" />
+      <Association Name="Musteriler_KayıtTablosu" Member="Musteriler" ThisKey="MusteriNo" OtherKey="MusteriNo" Type="Musteriler" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.KampanyaEkle" Method="KampanyaEkle">
+    <Parameter Name="TarifNo" Parameter="tarifNo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="KAdı" Parameter="kAdı" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="KSüresi" Parameter="kSüresi" Type="System.Int32" DbType="Int" />
+    <Parameter Name="KUcreti" Parameter="kUcreti" Type="System.Decimal" DbType="Money" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.KampanyaGüncelle" Method="KampanyaGüncelle">
+    <Parameter Name="KNo" Parameter="kNo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TarifNo" Parameter="tarifNo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="KAdı" Parameter="kAdı" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="KSüresi" Parameter="kSüresi" Type="System.Int32" DbType="Int" />
+    <Parameter Name="KUcreti" Parameter="kUcreti" Type="System.Decimal" DbType="Money" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.KampanyaListele" Method="KampanyaListele">
+    <ElementType Name="KampanyaListeleResult">
+      <Column Name="KNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TarifeNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KAdı" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="KSüresi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KUcreti" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.KampanyaSil" Method="KampanyaSil">
+    <Parameter Name="KNo" Parameter="kNo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.MusteriEkle" Method="MusteriEkle">
+    <Parameter Name="AdSoyad" Parameter="adSoyad" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Türü" Parameter="türü" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Telefon" Parameter="telefon" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Adres" Parameter="adres" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Puan" Parameter="puan" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.MusteriGüncelle" Method="MusteriGüncelle">
+    <Parameter Name="MusteriNo" Parameter="musteriNo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AdSoyad" Parameter="adSoyad" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Türü" Parameter="türü" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Telefon" Parameter="telefon" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Adres" Parameter="adres" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Puan" Parameter="puan" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.MusteriListele" Method="MusteriListele">
+    <ElementType Name="MusteriListeleResult">
+      <Column Name="MusteriNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AdSoyad" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Türü" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Telefon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Adres" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Puan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.MusteriSilme" Method="MusteriSilme">
+    <Parameter Name="MusteriNo" Parameter="musteriNo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.OdemeEkleme" Method="OdemeEkleme">
+    <Parameter Name="MusteriNo" Parameter="musteriNo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Tipi" Parameter="tipi" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ÖdemeTarihi" Parameter="ödemeTarihi" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ÖdemeTutarı" Parameter="ödemeTutarı" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="ÖdemeGecikmeDurumu" Parameter="ödemeGecikmeDurumu" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ÖdemeGecikmeFaizi" Parameter="ödemeGecikmeFaizi" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ÖdemeGüncelle" Method="ÖdemeGüncelle">
+    <Parameter Name="Ödemeno" Parameter="ödemeno" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MusteriNo" Parameter="musteriNo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Tipi" Parameter="tipi" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ÖdemeTarihi" Parameter="ödemeTarihi" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ÖdemeTutarı" Parameter="ödemeTutarı" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="ÖdemeGecikmeDurumu" Parameter="ödemeGecikmeDurumu" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ÖdemeGecikmeFaizi" Parameter="ödemeGecikmeFaizi" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ÖdemeListeleme" Method="ÖdemeListeleme">
+    <ElementType Name="ÖdemeListelemeResult">
+      <Column Name="Ödemeno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MusteriNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tipi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ÖdemeTarihi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ÖdemeTutarı" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ÖdemeGecikmeDurumu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ÖdemeGecikmeFaizi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ÖdemeSil" Method="ÖdemeSil">
+    <Parameter Name="Ödemeno" Parameter="ödemeno" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.TarifeEkle" Method="TarifeEkle">
+    <Parameter Name="MusteriNo" Parameter="musteriNo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TarifeAdı" Parameter="tarifeAdı" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TarifeDurum" Parameter="tarifeDurum" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Ucret" Parameter="ucret" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="BaşlangıçTarihi" Parameter="başlangıçTarihi" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="BitişTarihi" Parameter="bitişTarihi" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.TarifeGüncelleme" Method="TarifeGüncelleme">
+    <Parameter Name="TarifeNo" Parameter="tarifeNo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MusteriNo" Parameter="musteriNo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TarifeAdı" Parameter="tarifeAdı" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TarifeDurum" Parameter="tarifeDurum" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Ucret" Parameter="ucret" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="BaşlangıçTarihi" Parameter="başlangıçTarihi" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="BitişTarihi" Parameter="bitişTarihi" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.TarifeListeleme" Method="TarifeListeleme">
+    <ElementType Name="TarifeListelemeResult">
+      <Column Name="TarifeNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MusteriNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TarifeAdı" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TarifeDurum" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ucret" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="BaşlangıçTarihi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BitişTarihi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TarifeSil" Method="TarifeSil">
+    <Parameter Name="TarifeNo" Parameter="tarifeNo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.KampanyaArama" Method="KampanyaArama">
+    <Parameter Name="KNo" Parameter="kNo" Type="System.Int32" DbType="Int" />
+    <ElementType Name="KampanyaAramaResult">
+      <Column Name="KNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TarifeNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KAdı" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="KSüresi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KUcreti" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.MüsteriArama" Method="MüsteriArama">
+    <Parameter Name="MusteriNo" Parameter="musteriNo" Type="System.Int32" DbType="Int" />
+    <ElementType Name="MüsteriAramaResult">
+      <Column Name="MusteriNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AdSoyad" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Türü" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Telefon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Adres" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Puan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ÖdemeArama" Method="ÖdemeArama">
+    <Parameter Name="Ödemeno" Parameter="ödemeno" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ÖdemeAramaResult">
+      <Column Name="Ödemeno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MusteriNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tipi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ÖdemeTarihi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ÖdemeTutarı" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ÖdemeGecikmeDurumu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ÖdemeGecikmeFaizi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.tarifeArama" Method="tarifeArama">
+    <Parameter Name="TarifeNo" Parameter="tarifeNo" Type="System.Int32" DbType="Int" />
+    <ElementType Name="tarifeAramaResult">
+      <Column Name="TarifeNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MusteriNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TarifeAdı" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TarifeDurum" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ucret" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="BaşlangıçTarihi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BitişTarihi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.KayıtArama" Method="KayıtArama">
+    <Parameter Name="KayıtNo" Parameter="kayıtNo" Type="System.Int32" DbType="Int" />
+    <ElementType Name="KayıtAramaResult">
+      <Column Name="KayıtNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MusteriNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GörevliNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KayıtSüresi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KayıtTarihi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="KayıtSaati" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Açıklama" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BirimNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CagrıSil" Method="CagrıSil">
+    <Parameter Name="ÇNO" Parameter="çNO" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CagrıListele" Method="CagrıListele">
+    <ElementType Name="CagrıListeleResult">
+      <Column Name="ÇNO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AdıSoyadı" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Mezuniyet" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VardiyaDurumu" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HaftalıkÇalışmaPlanı" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CagrıKaydet" Method="CagrıKaydet">
+    <Parameter Name="AdıSoyadı" Parameter="adıSoyadı" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Mezuniyet" Parameter="mezuniyet" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="VardiyaDurumu" Parameter="vardiyaDurumu" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="HaftalıkÇalışmaDurumu" Parameter="haftalıkÇalışmaDurumu" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CagrıGüncelle" Method="CagrıGüncelle">
+    <Parameter Name="ÇNO" Parameter="çNO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AdıSoyadı" Parameter="adıSoyadı" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Mezuniyet" Parameter="mezuniyet" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="VardiyaDurumu" Parameter="vardiyaDurumu" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="HaftalıkÇalışmaDurumu" Parameter="haftalıkÇalışmaDurumu" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CagrıArama" Method="CagrıArama">
+    <Parameter Name="ÇNO" Parameter="çNO" Type="System.Int32" DbType="Int" />
+    <ElementType Name="CagrıAramaResult">
+      <Column Name="ÇNO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AdıSoyadı" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Mezuniyet" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VardiyaDurumu" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HaftalıkÇalışmaPlanı" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.BRMArama" Method="BRMArama">
+    <Parameter Name="BirimNo" Parameter="birimNo" Type="System.Int32" DbType="Int" />
+    <ElementType Name="BRMAramaResult">
+      <Column Name="BirimNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BirimAdı" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BirimMüdürü" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ŞubeNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.BirimSilme" Method="BirimSilme">
+    <Parameter Name="BirimNo" Parameter="birimNo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.BirimListele" Method="BirimListele">
+    <ElementType Name="BirimListeleResult">
+      <Column Name="BirimNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BirimAdı" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BirimMüdürü" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ŞubeNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.BirimGüncelle" Method="BirimGüncelle">
+    <Parameter Name="BirimNo" Parameter="birimNo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BirimAdı" Parameter="birimAdı" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BirimMüdürü" Parameter="birimMüdürü" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ŞubeNo" Parameter="şubeNo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.BirimEkle" Method="BirimEkle">
+    <Parameter Name="BirimAdı" Parameter="birimAdı" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BirimMüdürü" Parameter="birimMüdürü" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ŞubeNo" Parameter="şubeNo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.KayıtEkleme" Method="KayıtEkleme">
+    <Parameter Name="MusteriNo" Parameter="musteriNo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="GörevliNo" Parameter="görevliNo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="KayıtSüresi" Parameter="kayıtSüresi" Type="System.Int32" DbType="Int" />
+    <Parameter Name="KayıtTarihi" Parameter="kayıtTarihi" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="KayıtSaati" Parameter="kayıtSaati" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Açıklama" Parameter="açıklama" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BirimNo" Parameter="birimNo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.KayıtGüncelleme" Method="KayıtGüncelleme">
+    <Parameter Name="KayıtNo" Parameter="kayıtNo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MusteriNo" Parameter="musteriNo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="GörevliNo" Parameter="görevliNo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="KayıtSüresi" Parameter="kayıtSüresi" Type="System.Int32" DbType="Int" />
+    <Parameter Name="KayıtTarihi" Parameter="kayıtTarihi" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="KayıtSaati" Parameter="kayıtSaati" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Açıklama" Parameter="açıklama" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BirimNo" Parameter="birimNo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.KayıtListele" Method="KayıtListele">
+    <ElementType Name="KayıtListeleResult">
+      <Column Name="KayıtNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MusteriNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GörevliNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KayıtSüresi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KayıtTarihi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="KayıtSaati" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Açıklama" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BirimNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.KayıtSil" Method="KayıtSil">
+    <Parameter Name="KayıtNo" Parameter="kayıtNo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ŞubeArama" Method="ŞubeArama">
+    <Parameter Name="ŞubeNo" Parameter="şubeNo" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ŞubeAramaResult">
+      <Column Name="ŞubeNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ŞubeAdı" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Şubeİlçe" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ŞubeYetkilisi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ŞubeEkle" Method="ŞubeEkle">
+    <Parameter Name="ŞubeAdı" Parameter="şubeAdı" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Şubeİlçe" Parameter="şubeİlçe" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ŞubeYetkilisi" Parameter="şubeYetkilisi" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ŞubeGüncelle" Method="ŞubeGüncelle">
+    <Parameter Name="ŞubeNo" Parameter="şubeNo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ŞubeAdı" Parameter="şubeAdı" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Şubeİlçe" Parameter="şubeİlçe" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ŞubeYetkilisi" Parameter="şubeYetkilisi" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ŞubeListele" Method="ŞubeListele">
+    <ElementType Name="ŞubeListeleResult">
+      <Column Name="ŞubeNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ŞubeAdı" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Şubeİlçe" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ŞubeYetkilisi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ŞubeSil" Method="ŞubeSil">
+    <Parameter Name="ŞubeNo" Parameter="şubeNo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

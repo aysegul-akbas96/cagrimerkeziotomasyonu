@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.625" name="CagrıMerkeziUygulaması">
+  <DataContextMoniker Name="/CagrıMerkeziUygulamasıDataContext" />
+  <nestedChildShapes>
+    <classShape Id="d064cf60-7687-4539-8e2e-a949e48c07d6" absoluteBounds="5.75, 0.625, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/CagrıMerkeziUygulamasıDataContext/CagrıMerkeziGörevlisi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cb4e9089-b7d4-437d-a958-452a5209ef52" absoluteBounds="5.765, 1.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7338adb0-9fa2-4911-b335-4b4528df1561" absoluteBounds="6.25, 4.125, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/CagrıMerkeziUygulamasıDataContext/Kampanya" />
+      <nestedChildShapes>
+        <elementListCompartment Id="98cfa245-cc81-4d7a-ae35-bc98d92abc98" absoluteBounds="6.265, 4.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="65c94967-545c-4841-a0b1-da219337a22e" absoluteBounds="0.75, 2.625, 2, 1.9631982421874996">
+      <DataClassMoniker Name="/CagrıMerkeziUygulamasıDataContext/Musteriler" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6ead348a-0a42-4621-8d4d-95e67855041f" absoluteBounds="0.765, 3.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7ddd9662-06e1-4193-9ab9-f76346eb456b" absoluteBounds="3.5, 1.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/CagrıMerkeziUygulamasıDataContext/Ödeme" />
+      <nestedChildShapes>
+        <elementListCompartment Id="07bc3207-bd32-4bc5-9246-64ddb3c93c9c" absoluteBounds="3.515, 1.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="28ed6b2b-810e-4faf-8915-30c4384a75c6" absoluteBounds="3.5, 4, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/CagrıMerkeziUygulamasıDataContext/Tarife" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e1f75acc-c5c6-4055-8733-ab5f1a10de4f" absoluteBounds="3.515, 4.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.95274983723958); (3.5 : 2.95274983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CagrıMerkeziUygulamasıDataContext/Musteriler/Musteriler_Ödeme" />
+      <nodes>
+        <classShapeMoniker Id="65c94967-545c-4841-a0b1-da219337a22e" />
+        <classShapeMoniker Id="7ddd9662-06e1-4193-9ab9-f76346eb456b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.71875); (6.25 : 4.71875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CagrıMerkeziUygulamasıDataContext/Tarife/Tarife_Kampanya" />
+      <nodes>
+        <classShapeMoniker Id="28ed6b2b-810e-4faf-8915-30c4384a75c6" />
+        <classShapeMoniker Id="7338adb0-9fa2-4911-b335-4b4528df1561" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.29409912109375); (3.5 : 4.29409912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CagrıMerkeziUygulamasıDataContext/Musteriler/Musteriler_Tarife" />
+      <nodes>
+        <classShapeMoniker Id="65c94967-545c-4841-a0b1-da219337a22e" />
+        <classShapeMoniker Id="28ed6b2b-810e-4faf-8915-30c4384a75c6" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="2ce1e849-597a-4cfd-8a58-983d364db291" absoluteBounds="0.5, 5.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/CagrıMerkeziUygulamasıDataContext/Birimler" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fe6ba569-f106-46e7-9592-3c5d19a12930" absoluteBounds="0.51499999999999968, 6.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="626958f5-6e5e-4272-a708-41a6ad0fb401" absoluteBounds="1, 0.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/CagrıMerkeziUygulamasıDataContext/Şubeler" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5673602b-4f4f-4b31-94d5-b16313bc615d" absoluteBounds="1.0150000000000001, 1.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.90625 : 2.20359537760417); (2.90625 : 6.66429768880208); (2.5 : 6.66429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CagrıMerkeziUygulamasıDataContext/Şubeler/Şubeler_Birimler" />
+      <nodes>
+        <classShapeMoniker Id="626958f5-6e5e-4272-a708-41a6ad0fb401" />
+        <classShapeMoniker Id="2ce1e849-597a-4cfd-8a58-983d364db291" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="cc28d3d5-e154-4101-bfe1-893c07240806" absoluteBounds="5.25, 7, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/CagrıMerkeziUygulamasıDataContext/KayıtTablosu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e8914d52-6c3d-4e62-b424-abe65bfa4945" absoluteBounds="5.265, 7.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 7.22679768880208); (5.25 : 7.22679768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CagrıMerkeziUygulamasıDataContext/Birimler/Birimler_KayıtTablosu" />
+      <nodes>
+        <classShapeMoniker Id="2ce1e849-597a-4cfd-8a58-983d364db291" />
+        <classShapeMoniker Id="cc28d3d5-e154-4101-bfe1-893c07240806" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.96875 : 2.39589680989583); (5.96875 : 7)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CagrıMerkeziUygulamasıDataContext/CagrıMerkeziGörevlisi/CagrıMerkeziGörevlisi_KayıtTablosu" />
+      <nodes>
+        <classShapeMoniker Id="d064cf60-7687-4539-8e2e-a949e48c07d6" />
+        <classShapeMoniker Id="cc28d3d5-e154-4101-bfe1-893c07240806" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.65625 : 4.5881982421875); (2.65625 : 8.4319482421875); (5.25 : 8.4319482421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CagrıMerkeziUygulamasıDataContext/Musteriler/Musteriler_KayıtTablosu" />
+      <nodes>
+        <classShapeMoniker Id="65c94967-545c-4841-a0b1-da219337a22e" />
+        <classShapeMoniker Id="cc28d3d5-e154-4101-bfe1-893c07240806" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

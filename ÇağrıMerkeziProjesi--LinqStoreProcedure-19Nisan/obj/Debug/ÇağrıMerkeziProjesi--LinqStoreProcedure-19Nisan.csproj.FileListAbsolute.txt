@@ -1,0 +1,20 @@
+C:\Users\smart.ogrenci\Desktop\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\bin\Debug\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan.exe.config
+C:\Users\smart.ogrenci\Desktop\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\bin\Debug\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan.exe
+C:\Users\smart.ogrenci\Desktop\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\bin\Debug\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan.pdb
+C:\Users\smart.ogrenci\Desktop\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\obj\Debug\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan.csprojResolveAssemblyReference.cache
+C:\Users\smart.ogrenci\Desktop\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\obj\Debug\ÇağrıMerkeziProjesi__LinqStoreProcedure_19Nisan.Form1.resources
+C:\Users\smart.ogrenci\Desktop\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\obj\Debug\ÇağrıMerkeziProjesi__LinqStoreProcedure_19Nisan.Properties.Resources.resources
+C:\Users\smart.ogrenci\Desktop\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\obj\Debug\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan.csproj.GenerateResource.Cache
+C:\Users\smart.ogrenci\Desktop\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\obj\Debug\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan.exe
+C:\Users\smart.ogrenci\Desktop\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\obj\Debug\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan.pdb
+C:\Users\smart.ogrenci\Desktop\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\obj\Debug\ÇağrıMerkeziProjesi__LinqStoreProcedure_19Nisan.Form2.resources
+C:\Users\smart.ogrenci\Desktop\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\obj\Debug\ÇağrıMerkeziProjesi__LinqStoreProcedure_19Nisan.Trf.resources
+C:\Users\smart.ogrenci\Desktop\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\obj\Debug\ÇağrıMerkeziProjesi__LinqStoreProcedure_19Nisan.Kmpny.resources
+C:\Users\smart.ogrenci\Desktop\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\obj\Debug\ÇağrıMerkeziProjesi__LinqStoreProcedure_19Nisan.Ödm.resources
+C:\Users\smart.ogrenci\Desktop\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\obj\Debug\ÇağrıMerkeziProjesi__LinqStoreProcedure_19Nisan.CMerkez.resources
+C:\Users\smart.ogrenci\Desktop\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\obj\Debug\ÇağrıMerkeziProjesi__LinqStoreProcedure_19Nisan.MusteriTemsilciBilgileri.resources
+C:\Users\smart.ogrenci\Desktop\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\obj\Debug\ÇağrıMerkeziProjesi__LinqStoreProcedure_19Nisan.suubee.resources
+C:\Users\smart.ogrenci\Desktop\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\obj\Debug\ÇağrıMerkeziProjesi__LinqStoreProcedure_19Nisan.Brm.resources
+C:\Users\HP\Desktop\Smart Pro Kurs Çalışmalarım\Ayşegül Ders Uygulamaları\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\obj\Debug\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan.csprojAssemblyReference.cache
+C:\Users\HP\Desktop\Smart Pro Kurs Çalışmalarım\Ayşegül Ders Uygulamaları\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\obj\Debug\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan.exe
+C:\Users\HP\Desktop\Smart Pro Kurs Çalışmalarım\Ayşegül Ders Uygulamaları\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan\obj\Debug\ÇağrıMerkeziProjesi--LinqStoreProcedure-19Nisan.pdb
